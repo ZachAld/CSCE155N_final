@@ -1,7 +1,6 @@
 # CSCE155N_final
-This README file explains how to use the GUI for "compressibilityGUI." The 
-function does not require any inputs in the command line, all inputs are 
-to be entered in the GUI. First, select a gas from the list or choose 
+This function does not require any inputs in the command line; all inputs 
+are to be entered in the GUI. First, select a gas from the list or choose 
 "Other Gas." When one of the built-in gases is chosen, the program 
 automatically determines the critical temperature and pressure values based
 on information from engineeringtoolbox.com. If "Other Gas" is chosen, then 
@@ -15,9 +14,7 @@ Compressibility (Z)" to calculate the compressibility value of the gas.
 References:
 
 Critical temperature and pressure values from:
-https://www.engineeringtoolbox.com/gas-critical-temperature-pressure-d_161.
-html. 
+https://www.engineeringtoolbox.com/gas-critical-temperature-pressure-d_161.html. 
 
 Inspiration taken from a function by Dr. Bilal A. Siddiqui (2016):
-https://www.mathworks.com/matlabcentral/fileexchange/59803-compressibility-
-factor-calculator-exact
+https://www.mathworks.com/matlabcentral/fileexchange/59803-compressibility-factor-calculator-exact
