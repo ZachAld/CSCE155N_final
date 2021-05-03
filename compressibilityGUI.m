@@ -1,6 +1,6 @@
-%Approved by:
+%Approved by: Quinn Lanik
 %Critical pressures and temperatures from https://www.engineeringtoolbox.com/gas-critical-temperature-pressure-d_161.html
-%Reference: Dr. Bilal A. Siddiqui 2016 from https://www.mathworks.com/matlabcentral/fileexchange/59803-compressibility-factor-calculator-exact
+%Reference: Dr. Bilal A. Siddiqui (2016) from https://www.mathworks.com/matlabcentral/fileexchange/59803-compressibility-factor-calculator-exact
 function [] = compressibilityGUI()
     global comp
     comp.Pc = 0;
@@ -34,7 +34,7 @@ function [] = criticalControl(~,~)
     switch value
         case 1 %Air
             comp.Pc = 37.4; %in standard atmospheres (atm)
-            comp.Tc = 132.7; %in Kelvins
+            comp.Tc = 132.7; %in Kelvins (K)
         case 2 %Nitrogen
             comp.Pc = 33.6;
             comp.Tc = 126.2;
