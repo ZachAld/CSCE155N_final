@@ -30,7 +30,7 @@ function [] = criticalControl(~,~)
     global comp
     value = comp.gasChoice.Value; 
     %Small database of critical pressures and temperatures for some gasses.
-    %If gas is not in database, user is prompted to input them manually
+    %If gas is not in database, user is prompted to input values manually
     switch value
         case 1 %Air
             comp.Pc = 37.4; %in standard atmospheres (atm)
@@ -44,7 +44,7 @@ function [] = criticalControl(~,~)
         case 4 %Carbon Dioxide
             comp.Pc = 72.8;
             comp.Tc = 304.4;
-        case 5 %User inputs gas properties
+        case 5 %Other gas: user inputs gas properties
             gasEnter = inputdlg({'Input Critical Pressure (atm):','Input Critical Temperature (K):'},'Gas Properties',[1 35],{'0','0'});
             comp.Pc = str2double(gasEnter(1));
             comp.Tc = str2double(gasEnter(2));
@@ -79,12 +79,12 @@ function[v] = vanDerWaals()
     a = 27*R^2*comp.Tc^2/(64*comp.Pc);
     b = R*comp.Tc/(8*comp.Pc);
     C = [comp.press,(comp.press*b + R*comp.temp),a,-(a*b)];
-    vcalc = roots(C);
-%This function outputs three roots, and only one of them is real. The real
-%number is the correct v value.
+    vAll = roots(C);
+%This function outputs three roots, and only one of them is a real number. 
+%The real number is the correct v value.
     for i = 1:3
-        if isreal(vcalc(i))
-            v = vcalc(i);
+        if isreal(vAll(i))
+            v = vAll(i);
         end
     end
 end
